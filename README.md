@@ -28,6 +28,10 @@ RNN-Transformer-DDoS-Detection-Comparison/
 ├── analyze_attack_types.py        # Analyzes model performance by attack type
 ├── analyze_model_interpretability.py # Extracts feature importances and attentions
 ├── analyze_scalability.py         # Tests models under different traffic rates
+├── captures/                      # Directory for PCAP files (real and synthetic)
+│   ├── normal.pcap                # Generated normal traffic
+│   ├── syn_flood.pcap             # Generated SYN flood attack traffic
+│   └── mixed.pcap                 # Generated mixed attack traffic
 ├── collect_predictions.py         # Gathers raw predictions from all models
 ├── data/                          # Dataset loaders and processors
 │   ├── loader.py                  # Functions for loading and preparing datasets
@@ -37,7 +41,13 @@ RNN-Transformer-DDoS-Detection-Comparison/
 ├── generate_advanced_models_preds.py # Generates predictions for neural models
 ├── generate_baseline_preds.py      # Generates predictions for baseline models
 ├── improved_run_evaluation.py      # Enhanced evaluation pipeline
-├── main.py                         # Main entry point for training
+├── inference/                      # Inference package for real-time detection
+│   ├── __init__.py                 # Package initialization
+│   ├── inference_engine.py         # Core inference functionality
+│   ├── pcap_generator.py           # Synthetic PCAP file generator
+│   ├── pcap_processor.py           # PCAP to NSL-KDD feature converter
+│   └── report_generator.py         # Detection report generator
+├── main.py                         # Main entry point for training and inference
 ├── measure_performance.py          # Measures execution time and memory usage
 ├── models/                         # Model implementations
 │   ├── dnn.py                      # Deep Neural Network
@@ -50,6 +60,15 @@ RNN-Transformer-DDoS-Detection-Comparison/
 │   └── transformer.py              # Transformer model
 ├── preprocess_hard.py              # Preprocesses hard attack dataset
 ├── process_threshold_detector.py   # Processes threshold detector model
+├── reports/                        # Directory for detection reports
+├── saved_models/                   # Directory for trained models
+│   ├── dnn_1746776936/             # Saved DNN model
+│   ├── gru_1746776936/             # Saved GRU model
+│   ├── linear_model_1746776936/    # Saved linear model
+│   ├── lstm_1746776936/            # Saved LSTM model
+│   ├── shallow_dnn_1746776936/     # Saved shallow DNN model
+│   ├── threshold_detector_1746776936/ # Saved threshold detector
+│   └── transformer_1746776936/     # Saved transformer model
 ├── test_significance.py            # Performs statistical significance testing
 ├── threshold_detector_evaluation.py # Evaluates threshold detector models
 └── trainer.py                      # Trains all model architectures
@@ -62,6 +81,7 @@ RNN-Transformer-DDoS-Detection-Comparison/
 - **Realistic Testing**: Uses both public datasets and synthetic attacks
 - **Resource-Constrained Focus**: Optimized for edge devices like Raspberry Pi
 - **Reproducibility**: All data processing pipelines and training code included
+- **Real-time Detection**: Process PCAP files for live DDoS attack detection
 
 ## Datasets
 
@@ -78,6 +98,8 @@ The framework works with the NSL-KDD dataset and includes a synthetically enhanc
 - Python 3.8+
 - TensorFlow 2.10+
 - NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn
+- Scapy (for PCAP generation and processing)
+- dpkt (for PCAP processing)
 - psutil (for memory measurement)
 
 ### Installation
@@ -118,6 +140,49 @@ Generate visualizations:
 ```bash
 python fixed_generate_visualizations.py
 ```
+
+### Using Inference Mode
+
+The framework provides real-time DDoS detection capabilities using the trained models. It can process network traffic captures in PCAP format and generate detailed attack reports.
+
+#### Generating Synthetic PCAP Files
+
+Generate synthetic PCAP files with various attack patterns for testing:
+
+```bash
+# Generate a SYN flood attack PCAP
+python main.py generate --output captures/syn_flood.pcap --attack-type syn_flood
+
+# Generate normal traffic without attacks
+python main.py generate --output captures/normal.pcap --attack-type mixed --attack-duration 0 --normal-ratio 1.0
+
+# Generate mixed attack traffic
+python main.py generate --output captures/mixed.pcap --attack-type mixed --duration 600 --attack-duration 300
+```
+
+#### Running Inference on PCAP Files
+
+Process PCAP files to detect DDoS attacks:
+
+```bash
+# Run inference on a PCAP file using GRU model
+python main.py infer --pcap-file captures/syn_flood.pcap --model gru
+
+# Save detailed JSON report
+python main.py infer --pcap-file captures/syn_flood.pcap --model lstm --save-json
+
+# Use a specific model directory and detection threshold
+python main.py infer --pcap-file captures/syn_flood.pcap --model-dir saved_models/gru_1746776936 --threshold 0.3
+```
+
+The inference process will:
+1. Extract NSL-KDD features from the PCAP file
+2. Apply the selected model for attack detection
+3. Generate a detailed report showing:
+   - Attack windows with timestamps
+   - Confidence levels
+   - Suspected attack types
+   - Overall attack statistics
 
 ## Results
 
