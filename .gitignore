@@ -20,17 +20,10 @@ var/
 .installed.cfg
 *.egg
 
-# Model files
-*.h5
-*.tflite
 
-# Data files
-*.csv
-*.npy
 
 # Logs
 *.log
-*.json
 logs/
 evaluation_log*
 

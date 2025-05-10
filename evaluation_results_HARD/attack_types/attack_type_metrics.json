@@ -1,0 +1,9 @@
+{
+    "shallow": {},
+    "gru": {},
+    "dnn": {},
+    "lstm": {},
+    "transformer": {},
+    "linear": {},
+    "threshold": {}
+}

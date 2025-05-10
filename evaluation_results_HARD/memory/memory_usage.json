@@ -1,0 +1,56 @@
+{
+    "dnn": {
+        "mean_latency_ms": 48.74454800349971,
+        "p95_latency_ms": 56.070095780887634,
+        "min_latency_ms": 43.827090004924685,
+        "max_latency_ms": 62.51666700700298,
+        "post_processing_ms": 0.0337095387900869,
+        "peak_memory_mb": 1643.63671875,
+        "memory_increase_mb": 1293.90625
+    },
+    "gru": {
+        "mean_latency_ms": 49.91133050255788,
+        "p95_latency_ms": 54.560474291793064,
+        "min_latency_ms": 44.4476290140301,
+        "max_latency_ms": 59.738458949141204,
+        "post_processing_ms": 0.03426902888653179,
+        "peak_memory_mb": 2315.98828125,
+        "memory_increase_mb": 1966.2578125
+    },
+    "linear": {
+        "mean_latency_ms": 48.65308867107766,
+        "p95_latency_ms": 53.2625526713673,
+        "min_latency_ms": 45.06481304997578,
+        "max_latency_ms": 59.686867985874414,
+        "post_processing_ms": 0.03278857135834794,
+        "peak_memory_mb": 2321.38671875,
+        "memory_increase_mb": 1971.65625
+    },
+    "lstm": {
+        "mean_latency_ms": 55.05499703576788,
+        "p95_latency_ms": 64.19664895220194,
+        "min_latency_ms": 45.936883019749075,
+        "max_latency_ms": 67.16837803833187,
+        "post_processing_ms": 0.03693513184164961,
+        "peak_memory_mb": 2684.3671875,
+        "memory_increase_mb": 2334.63671875
+    },
+    "shallow": {
+        "mean_latency_ms": 49.056283370979756,
+        "p95_latency_ms": 59.68462072778491,
+        "min_latency_ms": 41.48286598501727,
+        "max_latency_ms": 63.513509987387806,
+        "post_processing_ms": 0.03370763151906431,
+        "peak_memory_mb": 2689.3046875,
+        "memory_increase_mb": 2339.57421875
+    },
+    "transformer": {
+        "mean_latency_ms": 49.30389300376798,
+        "p95_latency_ms": 54.914950075908564,
+        "min_latency_ms": 44.53682200983167,
+        "max_latency_ms": 58.838179043959826,
+        "post_processing_ms": 0.033931463258340955,
+        "peak_memory_mb": 2689.8671875,
+        "memory_increase_mb": 2340.13671875
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "linear_model": "saved_models/linear_model_1746776936",
+  "threshold_detector": "saved_models/threshold_detector_1746776936",
+  "shallow_dnn": "saved_models/shallow_dnn_1746776936",
+  "dnn": "saved_models/dnn_1746776936",
+  "lstm": "saved_models/lstm_1746776936",
+  "gru": "saved_models/gru_1746776936",
+  "transformer": "saved_models/transformer_1746776936"
+}
