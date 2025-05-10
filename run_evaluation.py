@@ -1,4 +1,33 @@
-# run_evaluation.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: run_evaluation.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Orchestrates the full evaluation pipeline for DDoS detection models.
+    Executes a sequence of evaluation steps:
+    1. Collecting raw predictions
+    2. Measuring execution time and memory usage
+    3. Analyzing performance by attack type
+    4. Testing scalability under different traffic rates
+    5. Performing statistical significance testing
+    6. Analyzing model interpretability
+    7. Generating visualizations
+    Results are consolidated into a single comprehensive JSON file.
+
+Usage:
+    $ python run_evaluation.py --test-file PATH_TO_TEST_FILE [options]
+    
+    Examples:
+    $ python run_evaluation.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv
+    $ python run_evaluation.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --skip predictions performance
+    $ python run_evaluation.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --model-dir custom_models
+    $ python run_evaluation.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --output-json custom_results.json
+"""
+
 import os
 import argparse
 import logging

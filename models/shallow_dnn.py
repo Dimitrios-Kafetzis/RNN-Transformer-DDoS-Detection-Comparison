@@ -1,4 +1,28 @@
-# models/shallow_dnn.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: models/shallow_dnn.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Implementation of a shallow deep neural network for DDoS detection.
+    Creates a network with two hidden layers, batch normalization, and dropout.
+    Designed as a compromise between the simplicity of linear models and the
+    complexity of deeper architectures.
+
+Usage:
+    This module is imported by other scripts and not meant to be run directly.
+    
+    Import example:
+    from models.shallow_dnn import create_shallow_dnn_model
+    
+    Usage example:
+    model = create_shallow_dnn_model(input_dim=41, hidden1=64, hidden2=32)
+    model.fit(X_train, y_train, epochs=20)
+"""
+
 import tensorflow as tf
 from tensorflow.keras import layers
 from tensorflow.keras.optimizers import Adam

@@ -1,4 +1,29 @@
-# models/transformer.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: models/transformer.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Implementation of a Transformer model for DDoS detection.
+    Creates an encoder-only Transformer with multi-head self-attention
+    that processes traffic sequences in parallel. Includes positional
+    encoding to maintain sequence order information and layer normalization
+    to stabilize training.
+
+Usage:
+    This module is imported by other scripts and not meant to be run directly.
+    
+    Import example:
+    from models.transformer import create_transformer_model
+    
+    Usage example:
+    model = create_transformer_model(input_shape=(10, 41), embed_dim=32, num_heads=4)
+    model.fit(X_train, y_train, epochs=20)
+"""
+
 import tensorflow as tf
 import numpy as np
 from tensorflow.keras import layers

@@ -1,4 +1,24 @@
-# preprocess_hard.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: preprocess_hard.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Preprocesses the NSL-KDD-Hard dataset to ensure feature alignment with the training set.
+    Takes either raw or one-hot encoded input, performs necessary transformations,
+    and ensures all features from the training set exist in the hard dataset.
+    Creates a properly aligned dataset for consistent model evaluation.
+
+Usage:
+    $ python preprocess_hard.py
+    
+    This script is typically run once after generating the synthetic NSL-KDD-Hard dataset
+    to prepare it for model evaluation.
+"""
+
 import pandas as pd
 import numpy as np
 from data.loader import load_nslkdd_dataset, process_nslkdd_dataset

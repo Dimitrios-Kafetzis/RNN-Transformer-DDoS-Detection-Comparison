@@ -1,8 +1,23 @@
 #!/usr/bin/env python3
-# align_dataset.py
+# -*- coding: utf-8 -*-
 """
-This script ensures consistent data alignment across evaluation scripts.
-It finds all prediction files and ensures they use the same ground truth.
+File: align_dataset.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Ensures consistent data alignment across evaluation scripts.
+    Finds all prediction files and ground truth labels, ensures they use
+    consistent dimensions, and adjusts files as needed. Handles cases where
+    prediction and ground truth files have different lengths by truncating
+    or padding to match a common reference length.
+
+Usage:
+    $ python align_dataset.py
+    
+    This script is typically run before generating visualizations or aggregate
+    results to ensure all data is properly aligned for fair comparison.
 """
 
 import os

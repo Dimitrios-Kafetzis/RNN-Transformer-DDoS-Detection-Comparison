@@ -1,6 +1,25 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-Main script to run the DoS detection project.
-Supports both Bot-IoT and NSL-KDD datasets, with options for hping3 testing.
+File: main.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Main entry point for the RNN-Transformer-DDoS-Comparison framework.
+    Handles command-line arguments, loads datasets, creates or loads models,
+    and coordinates training, evaluation, and inference processes.
+    Supports different dataset options and various evaluation modes.
+
+Usage:
+    $ python main.py [arguments]
+    
+    Examples:
+    $ python main.py --dataset nsl_kdd --data_dir data/nsl_kdd_dataset
+    $ python main.py --dataset nsl_kdd --skip_training --model_save_dir saved_models
+    $ python main.py --dataset nsl_kdd --convert_to_tflite --quantize
+    $ python main.py --inference --pcap_file captures/example.pcap --threshold 0.5
 """
 
 import os

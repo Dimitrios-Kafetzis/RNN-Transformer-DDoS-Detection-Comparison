@@ -1,4 +1,27 @@
-# models/lstm.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: models/lstm.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Implementation of a Long Short-Term Memory (LSTM) network for DDoS detection.
+    Creates a bidirectional LSTM architecture that processes traffic sequences.
+    Designed to capture temporal patterns in network flows that may indicate attacks.
+
+Usage:
+    This module is imported by other scripts and not meant to be run directly.
+    
+    Import example:
+    from models.lstm import create_lstm_model
+    
+    Usage example:
+    model = create_lstm_model(input_shape=(10, 41), lstm_units=64)
+    model.fit(X_train, y_train, epochs=20)
+"""
+
 import tensorflow as tf
 from tensorflow.keras import layers
 from tensorflow.keras.optimizers import Adam

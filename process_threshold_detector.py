@@ -1,5 +1,23 @@
 #!/usr/bin/env python3
-# process_threshold_detector.py
+# -*- coding: utf-8 -*-
+"""
+File: process_threshold_detector.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Processes a threshold detector model and generates predictions on test data.
+    Loads thresholds from a JSON file, applies them to normalized test data,
+    and produces binary predictions and pseudoprobabilities for evaluation.
+    Handles both raw and preprocessed input formats.
+
+Usage:
+    $ python process_threshold_detector.py --detector-dir DETECTOR_DIR --test-file TEST_FILE --output-dir OUTPUT_DIR
+    
+    Examples:
+    $ python process_threshold_detector.py --detector-dir saved_models/threshold_detector_1746776936 --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --output-dir evaluation_results/predictions
+"""
 
 import os
 import sys

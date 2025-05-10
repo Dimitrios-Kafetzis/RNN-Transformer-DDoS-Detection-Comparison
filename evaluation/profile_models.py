@@ -1,11 +1,24 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-evaluation/profile_models.py
+File: evaluation/profile_models.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
 
-Automatically discovers all <model>_y_pred.npy / <model>_y_true.npy
-files in evaluation/predictions/, then for each one prints a
-classification report and writes confusion-matrix + per-class F1
-charts under plots/model_profiles/.
+Description:
+    Automatically discovers prediction files in evaluation/predictions/ directory,
+    generates classification reports, and creates visualization plots for each model.
+    Creates confusion matrices and per-class F1 score charts to provide detailed
+    insights into model performance across different traffic categories.
+    All visualizations are saved under plots/model_profiles/ directory.
+
+Usage:
+    $ python -m evaluation.profile_models
+    
+    This script is typically run as part of the evaluation pipeline after
+    collecting predictions from all models. It requires prediction files
+    to be present in the evaluation/predictions/ directory.
 """
 
 import os

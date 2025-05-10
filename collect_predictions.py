@@ -1,4 +1,25 @@
-# collect_predictions.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: collect_predictions.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Collects raw prediction probabilities from all trained models.
+    Loads each model, generates predictions on the test dataset, and
+    saves the raw probabilities and binary predictions at various thresholds.
+    These predictions are later used for comprehensive model evaluation.
+
+Usage:
+    $ python collect_predictions.py --test-file PATH_TO_TEST_FILE [options]
+    
+    Examples:
+    $ python collect_predictions.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv
+    $ python collect_predictions.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --model-dir custom_models
+"""
+
 import os
 import json
 import numpy as np

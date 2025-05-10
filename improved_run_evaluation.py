@@ -1,8 +1,25 @@
 #!/usr/bin/env python3
-# improved_run_evaluation.py
+# -*- coding: utf-8 -*-
 """
-An improved evaluation pipeline that separates the threshold detector evaluation
-from neural network models evaluation, then combines results for final reporting.
+File: improved_run_evaluation.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    An enhanced evaluation pipeline that separates threshold detector evaluation
+    from neural network model evaluation, then combines results for final reporting.
+    Orchestrates the complete evaluation process including prediction collection,
+    performance measurement, attack type analysis, scalability testing,
+    statistical significance testing, and visualization generation.
+
+Usage:
+    $ python improved_run_evaluation.py --test-file PATH_TO_TEST_FILE [options]
+    
+    Examples:
+    $ python improved_run_evaluation.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv
+    $ python improved_run_evaluation.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --skip predictions performance
+    $ python improved_run_evaluation.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --model-dir custom_models
 """
 
 import os

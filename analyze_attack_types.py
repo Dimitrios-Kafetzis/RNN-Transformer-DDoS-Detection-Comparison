@@ -1,4 +1,29 @@
-# analyze_attack_types.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: analyze_attack_types.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Analyzes model performance across different attack types.
+    Breaks down detection effectiveness by attack categories such as:
+    - TCP SYN Flood
+    - UDP Flood
+    - HTTP Flood
+    - ICMP Flood
+    - Low-and-Slow attacks
+    Calculates precision, recall, and F1 scores for each attack type and model.
+
+Usage:
+    $ python analyze_attack_types.py --test-file PATH_TO_TEST_FILE [options]
+    
+    Examples:
+    $ python analyze_attack_types.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv
+    $ python analyze_attack_types.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --model-dir custom_models
+"""
+
 import os
 import numpy as np
 import pandas as pd

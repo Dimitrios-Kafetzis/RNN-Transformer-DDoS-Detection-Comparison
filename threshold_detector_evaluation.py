@@ -1,5 +1,24 @@
 #!/usr/bin/env python3
-# threshold_detector_evaluation.py
+# -*- coding: utf-8 -*-
+"""
+File: threshold_detector_evaluation.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Evaluates threshold detector models and saves comprehensive metrics.
+    Loads thresholds from JSON, applies them to test data, and calculates
+    precision, recall, F1 score, accuracy, and ROC AUC. Generates both binary
+    predictions and pseudoprobabilities at various thresholds for visualization.
+
+Usage:
+    $ python threshold_detector_evaluation.py --detector-dir DETECTOR_DIR --test-file TEST_FILE --output-dir OUTPUT_DIR
+    
+    Examples:
+    $ python threshold_detector_evaluation.py --detector-dir saved_models/threshold_detector_1746776936 --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --output-dir evaluation_results/threshold_detector
+    $ python threshold_detector_evaluation.py --model-dir saved_models --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv
+"""
 
 import os
 import sys

@@ -1,4 +1,25 @@
-# analyze_scalability.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: analyze_scalability.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Analyzes model performance under different traffic rates.
+    Tests how each model's accuracy, latency, and resource usage
+    scale as traffic volumes increase, simulating realistic DDoS scenarios.
+    Helps determine which models maintain performance under high traffic loads.
+
+Usage:
+    $ python analyze_scalability.py --test-file PATH_TO_TEST_FILE [options]
+    
+    Examples:
+    $ python analyze_scalability.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv
+    $ python analyze_scalability.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --model-dir custom_models
+"""
+
 import os
 import time
 import numpy as np

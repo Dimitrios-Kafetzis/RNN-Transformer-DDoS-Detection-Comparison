@@ -1,6 +1,32 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-Data loading functionality for network intrusion detection datasets.
-Supports Bot-IoT and NSL-KDD datasets.
+File: data/loader.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Data loading functionality for network intrusion detection datasets.
+    Supports loading and preprocessing NSL-KDD and Bot-IoT datasets.
+    Provides functions for:
+    - Downloading datasets
+    - Processing raw data
+    - Creating aligned feature spaces
+    - Normalizing features
+    - Creating TensorFlow datasets for model training
+
+Usage:
+    This module is imported by other scripts and not meant to be run directly.
+    
+    Import examples:
+    from data.loader import load_nslkdd_dataset, process_nslkdd_dataset
+    from data.loader import normalize_features, create_aligned_feature_space
+    
+    Usage examples:
+    train_df, test_df = load_nslkdd_dataset(data_dir, split="both")
+    processed_df = process_nslkdd_dataset(raw_df)
+    X_norm, mean, std = normalize_features(X)
 """
 
 import os

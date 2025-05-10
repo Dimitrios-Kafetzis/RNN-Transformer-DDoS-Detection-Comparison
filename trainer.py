@@ -1,4 +1,33 @@
-# trainer.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: trainer.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Handles the training of all model architectures for DDoS detection.
+    Creates, trains, and saves various models including:
+    - Linear model
+    - Threshold detector
+    - Shallow DNN
+    - Deep Neural Network
+    - LSTM
+    - GRU
+    - Transformer
+    Each model is trained on the same dataset for fair comparison.
+
+Usage:
+    $ python trainer.py
+    
+    The script can also be imported:
+    from trainer import train_and_save
+    
+    Example:
+    train_and_save(create_model_fn, "model_name", X_train, y_train, timestamp)
+"""
+
 import time
 import json
 import inspect

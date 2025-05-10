@@ -1,4 +1,32 @@
-# models/metrics.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: models/metrics.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Custom metrics for model evaluation in TensorFlow.
+    Implements an F1 score metric compatible with Keras, enabling
+    F1 scoring during model training and evaluation.
+
+Usage:
+    This module is imported by other scripts and not meant to be run directly.
+    
+    Import example:
+    from models.metrics import F1Score
+    
+    Usage examples:
+    # Direct usage
+    f1 = F1Score()
+    f1.update_state(y_true, y_pred)
+    result = f1.result()
+    
+    # In model compilation
+    model.compile(metrics=[F1Score()])
+"""
+
 import tensorflow as tf
 from tensorflow.keras.utils import register_keras_serializable
 

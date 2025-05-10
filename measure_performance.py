@@ -1,4 +1,30 @@
-# measure_performance.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: measure_performance.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Measures execution time and memory usage for all DDoS detection models.
+    Specifically quantifies:
+    - Feature extraction time
+    - Model inference time
+    - Post-processing time
+    - Peak memory usage
+    - CPU utilization
+    Results are saved to JSON files for further analysis and visualization.
+
+Usage:
+    $ python measure_performance.py --test-file PATH_TO_TEST_FILE [options]
+    
+    Examples:
+    $ python measure_performance.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv
+    $ python measure_performance.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --num-runs 50
+    $ python measure_performance.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --model-dir custom_models
+"""
+
 import os
 import time
 import numpy as np

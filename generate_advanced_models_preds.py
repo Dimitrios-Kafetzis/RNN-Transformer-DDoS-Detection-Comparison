@@ -1,9 +1,23 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-scripts/generate_advanced_models_preds.py
+File: generate_advanced_models_preds.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
 
-Load each TF model under --model-dir, evaluate it on the Hard NSL-KDD file
-(raw or one-hot), and dump out <model>_y_pred.npy and <model>_y_true.npy.
+Description:
+    Loads TensorFlow models from the model directory, evaluates them on the
+    NSL-KDD-Hard dataset (raw or one-hot encoded), and saves prediction results.
+    Handles proper data alignment, normalization, and sequence reshaping
+    to ensure valid predictions for all model architectures.
+
+Usage:
+    $ python generate_advanced_models_preds.py --test-file PATH_TO_TEST_FILE --model-dir MODEL_DIR --output-dir OUTPUT_DIR [options]
+    
+    Examples:
+    $ python generate_advanced_models_preds.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --model-dir saved_models --output-dir evaluation_results/predictions
+    $ python generate_advanced_models_preds.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --model-dir saved_models --batch-size 128 --threshold 0.3
 """
 
 import os

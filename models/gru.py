@@ -1,4 +1,28 @@
-# models/gru.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: models/gru.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Implementation of a Gated Recurrent Unit (GRU) network for DDoS detection.
+    Creates a bidirectional GRU architecture that processes traffic sequences.
+    GRU cells use fewer parameters than LSTM by combining input and forget gates,
+    potentially offering comparable performance with lower computational cost.
+
+Usage:
+    This module is imported by other scripts and not meant to be run directly.
+    
+    Import example:
+    from models.gru import create_gru_model
+    
+    Usage example:
+    model = create_gru_model(input_shape=(10, 41), gru_units=64)
+    model.fit(X_train, y_train, epochs=20)
+"""
+
 import tensorflow as tf
 from tensorflow.keras import layers
 from tensorflow.keras.optimizers import Adam

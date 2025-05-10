@@ -1,4 +1,25 @@
-# test_significance.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: test_significance.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Performs statistical significance testing to determine if performance differences
+    between models are statistically significant. Uses cross-validation to generate
+    multiple F1 scores for each model, then conducts pairwise t-tests to assess
+    if observed differences are meaningful or simply due to chance.
+
+Usage:
+    $ python test_significance.py --test-file PATH_TO_TEST_FILE [options]
+    
+    Examples:
+    $ python test_significance.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv
+    $ python test_significance.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --model-dir custom_models
+"""
+
 import os
 import numpy as np
 import tensorflow as tf

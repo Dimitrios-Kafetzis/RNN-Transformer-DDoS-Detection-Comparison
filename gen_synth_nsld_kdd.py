@@ -1,4 +1,27 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: gen_synth_nsld_kdd.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Generates synthetic DDoS attack samples for the NSL-KDD-Hard dataset.
+    Creates stealthy attacks by sampling benign flows and boosting select
+    features into the 98th-99th percentile range. These synthetic attacks
+    are designed to be more challenging to detect than standard examples,
+    providing a more rigorous evaluation of model performance.
+
+Usage:
+    $ python gen_synth_nsld_kdd.py [options]
+    
+    Examples:
+    $ python gen_synth_nsld_kdd.py
+    $ python gen_synth_nsld_kdd.py --train-csv data/nsl_kdd_dataset/NSL-KDD-Train.csv
+    $ python gen_synth_nsld_kdd.py --out-csv data/nsl_kdd_dataset/NSL-KDD-Hard.csv --n-benign 10000 --n-attack 10000
+"""
+
 import numpy as np
 import pandas as pd
 from pathlib import Path

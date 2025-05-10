@@ -1,8 +1,30 @@
 #!/usr/bin/env python3
-# fixed_generate_visualizations.py
+# -*- coding: utf-8 -*-
 """
-Enhanced version of generate_visualizations.py that handles edge cases and ensures consistency
-in the data when creating visualizations for model evaluation results.
+File: fixed_generate_visualizations.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Enhanced visualization generator that creates comprehensive plots and charts
+    for model evaluation results. Handles edge cases and ensures data consistency
+    when creating visualizations including:
+    - Model convergence analysis
+    - ROC and precision-recall curves
+    - Decision threshold analysis
+    - Detection time breakdown
+    - Resource efficiency metrics
+    - Attack type-specific performance
+    - Transformer attention visualization
+    All visualizations are saved to the plots directory.
+
+Usage:
+    $ python fixed_generate_visualizations.py
+    
+    This script is typically called automatically by the evaluation pipeline
+    but can also be run independently to regenerate visualizations from
+    existing evaluation results.
 """
 
 import os

@@ -1,4 +1,26 @@
-# analyze_model_interpretability.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: analyze_model_interpretability.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Extracts feature importance and attention weights from trained models.
+    Helps understand which network characteristics contribute most to detection
+    decisions, and how different models prioritize various features.
+    For Transformer models, also extracts and visualizes attention patterns
+    across sequence positions.
+
+Usage:
+    $ python analyze_model_interpretability.py --test-file PATH_TO_TEST_FILE [options]
+    
+    Examples:
+    $ python analyze_model_interpretability.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv
+    $ python analyze_model_interpretability.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv --model-dir custom_models
+"""
+
 import os
 import numpy as np
 import tensorflow as tf

@@ -1,4 +1,24 @@
-# evaluation_config.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: evaluation_config.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Configuration file for the evaluation framework.
+    Contains constants and settings used throughout the evaluation process,
+    including output directories, model names, attack types, traffic rates,
+    and decision thresholds.
+
+Usage:
+    This module is imported by other scripts and not meant to be run directly.
+    
+    Import example:
+    from evaluation_config import MODELS, PREDICTIONS_DIR, ATTACK_TYPES
+"""
+
 import os
 
 # Output directories

@@ -1,10 +1,22 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-scripts/generate_baseline_preds.py
+File: generate_baseline_preds.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
 
-Load raw or one-hot NSL-KDD CSV (train for feature space + --test-file
-for the Hard set), run the two baseline detectors, and save
-their predictions and true labels into evaluation/predictions/.
+Description:
+    Generates predictions using baseline detector models (Threshold Detector and Linear Model).
+    Loads raw or one-hot NSL-KDD data, aligns features with the training feature space,
+    and saves model predictions for evaluation. Handles proper normalization and
+    feature alignment to ensure consistent evaluation across all models.
+
+Usage:
+    $ python generate_baseline_preds.py --test-file PATH_TO_TEST_FILE
+    
+    Examples:
+    $ python generate_baseline_preds.py --test-file data/nsl_kdd_dataset/NSL-KDD-Hard.csv
 """
 
 import os

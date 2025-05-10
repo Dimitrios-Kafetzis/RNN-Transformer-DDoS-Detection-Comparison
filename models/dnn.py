@@ -1,4 +1,27 @@
-# models/dnn.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: models/dnn.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Implementation of a deep neural network for DDoS detection.
+    Creates a network with three hidden layers, batch normalization, and dropout.
+    Includes L2 regularization and gradient clipping to prevent overfitting.
+
+Usage:
+    This module is imported by other scripts and not meant to be run directly.
+    
+    Import example:
+    from models.dnn import create_dnn_model
+    
+    Usage example:
+    model = create_dnn_model(input_dim=41, hidden1=128, hidden2=64, hidden3=32)
+    model.fit(X_train, y_train, epochs=20)
+"""
+
 import tensorflow as tf
 from tensorflow.keras import layers
 from tensorflow.keras.optimizers import Adam

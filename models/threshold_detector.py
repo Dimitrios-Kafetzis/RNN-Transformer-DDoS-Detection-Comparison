@@ -1,4 +1,29 @@
-# models/threshold_detector.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+File: models/threshold_detector.py
+Author: Dimitrios Kafetzis (kafetzis@aueb.gr)
+Created: May 2025
+License: MIT
+
+Description:
+    Implementation of a simple percentile-based threshold detector.
+    Calibrates thresholds based on benign training data and flags attacks
+    when any feature exceeds its threshold. Serves as a baseline detector
+    for comparison against more sophisticated neural network approaches.
+
+Usage:
+    This module is imported by other scripts and not meant to be run directly.
+    
+    Import example:
+    from models.threshold_detector import ThresholdDetector
+    
+    Usage example:
+    detector = ThresholdDetector(percentile=99.5)
+    detector.calibrate(X_train, y_train, feature_indices)
+    y_pred = detector.predict(X_test, feature_indices)
+"""
+
 import numpy as np
 import time
 import logging
