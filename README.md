@@ -1,6 +1,6 @@
-# DoS_Attacks_Detector
+# RNN-Transformer-DDoS-Detection-Comparison
 
-A comparative framework for real-time, resource-efficient detection of transport-layer DDoS attacks in IoT/5G networks.
+A systematic comparison of RNN and Transformer architectures for detecting transport-layer DDoS attacks in resource-constrained IoT/5G environments.
 
 ## Overview
 
@@ -23,7 +23,7 @@ Each model is evaluated along four dimensions:
 ## Repository Structure
 
 ```
-DoS_Attacks_Detector/
+RNN-Transformer-DDoS-Detection-Comparison/
 ├── align_dataset.py               # Ensures consistent data alignment
 ├── analyze_attack_types.py        # Analyzes model performance by attack type
 ├── analyze_model_interpretability.py # Extracts feature importances and attentions
@@ -84,8 +84,8 @@ The framework works with the NSL-KDD dataset and includes a synthetically enhanc
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/kafetzis/DoS_Attacks_Detector.git
-cd DoS_Attacks_Detector
+git clone https://github.com/kafetzis/RNN-Transformer-DDoS-Detection-Comparison.git
+cd RNN-Transformer-DDoS-Comparison
 ```
 
 2. Install the required packages:
@@ -147,6 +147,7 @@ If you use this code in your research, please cite:
   author={Kafetzis, Dimitrios},
   journal={},
   year={2025},
+  url={https://github.com/kafetzis/RNN-Transformer-DDoS-Detection-Comparison}
 }
 ```
 
@@ -158,4 +159,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Dimitrios Kafetzis - kafetzis@aueb.gr
 
-Project Link: [https://github.com/kafetzis/DoS_Attacks_Detector](https://github.com/kafetzis/DoS_Attacks_Detector)
+Project Link: [https://github.com/kafetzis/RNN-Transformer-DDoS-Detection-Comparison](https://github.com/kafetzis/RNN-Transformer-DDoS-Detection-Comparison)
